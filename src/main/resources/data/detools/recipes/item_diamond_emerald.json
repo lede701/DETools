@@ -1,0 +1,24 @@
+{
+  "group": "detools",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "gdg",
+    "ded",
+    "gdg"
+  ],
+  "key": {
+    "d": {
+      "item": "minecraft:diamond"
+    },
+    "e": {
+      "item": "minecraft:emerald"
+    },
+    "g": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "detools:item_diamond_emerald",
+    "count": 2
+  }
+}
