@@ -1,29 +1,39 @@
 package com.lededesigns.detools.util;
 
 import com.lededesigns.detools.DETools;
-import com.lededesigns.detools.items.DeToolsItem;
-import com.lededesigns.detools.items.ItemGearPattern;
+import com.lededesigns.detools.items.DeToolsElement;
+import com.lededesigns.detools.items.ElementGearPattern;
 import com.lededesigns.detools.tools.DEToolsItemTier;
+import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RegistryHandler {
     // Item Registry
     public static final DeferredRegister<Item> ITEMS = new DeferredRegister<Item>(ForgeRegistries.ITEMS, DETools.MOD_ID);
 
+    // Block Registry
+    public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<Block>(ForgeRegistries.BLOCKS, DETools.MOD_ID);
+
+    public static final List<DeToolsElement> ELEMENTS = new ArrayList<>();
+
     // Registry methods
     public static void init() {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
     // Items
-    public static final RegistryObject<Item> ITEM_DIAMOND_EMERALD = ITEMS.register("item_diamond_emerald", DeToolsItem::new);
+    public static final RegistryObject<Item> ITEM_DIAMOND_EMERALD = ITEMS.register("item_diamond_emerald", DeToolsElement::new);
 
-    public static final RegistryObject<Item> ITEM_MACHINE_FRAME = ITEMS.register("item_machine_frame", DeToolsItem::new);
-    public static final RegistryObject<Item> ITEM_GEAR_PATTERN = ITEMS.register("item_gear_pattern", ItemGearPattern::new);
+    public static final RegistryObject<Item> ITEM_MACHINE_FRAME = ITEMS.register("item_machine_frame", DeToolsElement::new);
+    public static final RegistryObject<Item> ITEM_GEAR_PATTERN = ITEMS.register("item_gear_pattern", ElementGearPattern::new);
 
     // Diamond Emerald Tools
     public static final RegistryObject<SwordItem> DE_SWORD = ITEMS.register("de_sword", () ->

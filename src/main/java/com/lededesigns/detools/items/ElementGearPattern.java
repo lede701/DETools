@@ -1,7 +1,6 @@
 package com.lededesigns.detools.items;
 
 import com.google.common.collect.Multimap;
-import com.lededesigns.detools.DETools;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -12,8 +11,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemGearPattern extends DeToolsItem {
-    public ItemGearPattern() {
+public class ElementGearPattern extends DeToolsElement {
+    public ElementGearPattern() {
         super(new Item.Properties().maxStackSize(1).maxDamage(1000), 80);
     }
 
