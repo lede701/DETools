@@ -1,0 +1,21 @@
+{
+  "group": "detools",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " e ",
+    " s ",
+    " s "
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:emerald"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "detools:e_shovel",
+    "count": 1
+  }
+}

@@ -9,6 +9,9 @@ import java.util.function.Supplier;
 public enum DEToolsItemTier implements IItemTier {
     DIAMOND_EMERALD(3, 2683, 8.5F, 8.0F, 18, () ->{
         return Ingredient.fromItems(RegistryHandler.DE_PICKAXE.get());
+    }),
+    EMERALD(3, 1900, 7.5f, 6.0F, 12, () ->{
+        return Ingredient.fromItems(RegistryHandler.E_PICKAXE.get());
     });
 
     private final int harvestLevel;

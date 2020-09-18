@@ -1,0 +1,21 @@
+{
+  "group": "detools",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "eee",
+    " s ",
+    " s "
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:emerald"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "detools:e_pickaxe",
+    "count": 1
+  }
+}

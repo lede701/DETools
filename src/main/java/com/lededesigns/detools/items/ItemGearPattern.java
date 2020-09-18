@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 public class ItemGearPattern extends DeToolsItem {
     public ItemGearPattern() {
-        super(new Item.Properties().maxStackSize(1).maxDamage(1000));
+        super(new Item.Properties().maxStackSize(1).maxDamage(1000), 80);
     }
 
     @Override
