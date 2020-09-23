@@ -1,6 +1,7 @@
 package com.lededesigns.detools;
 
 import com.lededesigns.detools.util.RegistryHandler;
+import com.lededesigns.detools.util.RegistryHandlerMachines;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
@@ -37,6 +38,7 @@ public class DETools {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
         RegistryHandler.init();
+        RegistryHandlerMachines.init();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
