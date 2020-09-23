@@ -4,6 +4,7 @@ import com.lededesigns.detools.DETools;
 import com.lededesigns.detools.items.DeToolsElement;
 import com.lededesigns.detools.items.ElementGearPattern;
 import com.lededesigns.detools.tools.DEToolsItemTier;
+import com.lededesigns.detools.blocks.BlockBatteryTier1;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
@@ -57,5 +58,10 @@ public class RegistryHandler {
             new ShovelItem(DEToolsItemTier.EMERALD, -7, -1F, new Item.Properties().group(DETools.TAB)));
     public static final RegistryObject<HoeItem> E_HOE = ITEMS.register("e_hoe", () ->
             new HoeItem(DEToolsItemTier.EMERALD, -1F, new Item.Properties().group(DETools.TAB)));
+
+    // Machines
+    public static final RegistryObject<Block> BlockBatteryTier1 = BLOCKS.register("block_battery_tier1", BlockBatteryTier1::new);
+    public static final RegistryObject<Item> ItemBatteryTier1 = ITEMS.register("block_battery_tier1", ()-> new BlockItem(BlockBatteryTier1.get().getBlock(),
+            new Item.Properties().group(DETools.TAB).maxStackSize(1)));
 
 }

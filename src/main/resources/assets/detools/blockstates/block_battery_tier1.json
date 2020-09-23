@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": {"model": "detools:block/block_battery_tier1" }
+  }
+}

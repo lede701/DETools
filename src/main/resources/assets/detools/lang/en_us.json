@@ -1,4 +1,5 @@
 {
+  "block.detools.block_battery_tier1": "Battery Tier 1",
   "itemGroup.detoolsTab": "Diamonds, Emeralds, and Tools",
   "item.detools.item_diamond_emerald": "Diamond Emerald",
   "item.detools.de_axe": "Diamond Emerald Axe",
@@ -11,5 +12,6 @@
   "item.detools.e_pickaxe": "Emerald Pickaxe",
   "item.detools.e_shovel": "Emerald Shovel",
   "item.detools.e_sword": "Emerald Sword",
+  "item.detools.item_machine_frame": "DETools Machine Frame",
   "item.detools.item_gear_pattern": "Gear Pattern"
 }

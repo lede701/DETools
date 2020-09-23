@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "detools:blocks/machine_bottom",
+    "up": "detools:blocks/machine_top",
+    "north": "detools:blocks/machine_side",
+    "east": "detools:blocks/machine_side",
+    "south": "detools:blocks/machine_side",
+    "west": "detools:blocks/machine_side",
+    "particle": "detools:blocks/machine_bottom"
+  }
+}
