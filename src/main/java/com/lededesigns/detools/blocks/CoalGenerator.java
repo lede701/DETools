@@ -5,15 +5,26 @@ import com.lededesigns.ledecore.blocks.GeneratorBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.DirectionalBlock;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.state.StateContainer;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.fml.network.NetworkHooks;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -51,6 +62,28 @@ public class CoalGenerator extends GeneratorBlock {
     @Override
     public BlockState getStateForPlacement(BlockItemUseContext context) {
         return this.getDefaultState().with(DirectionalBlock.FACING, context.getFace());
+    }
+
+    @Override
+    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity entity, Hand handIn, BlockRayTraceResult hit) {
+        super.onBlockActivated(state, world, pos, entity, handIn, hit);
+        int x = pos.getX();
+        int y = pos.getY();
+        int z = pos.getZ();
+        if(entity instanceof ServerPlayerEntity) {
+            NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
+                @Override
+                public ITextComponent getDisplayName() {
+                    return new StringTextComponent("Coal Generator");
+                }
+
+                @Override
+                public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+                    return null;
+                }
+            });
+        }
+        return ActionResultType.SUCCESS;
     }
 
     @Override
@@ -109,7 +142,7 @@ public class CoalGenerator extends GeneratorBlock {
             // Get count of item in fuel slot
             int fuelSlotCount = 0;
             // Get what kind of item is in fuel slot
-            Item itemInFuelSlot = Items.COAL;
+            Item itemInFuelSlot = Items.DIRT;
 
             // Need to check if there is fuel in the feulslot
             if (fuelTimeToBurn == 0 && fuelSlotCount > 0 && allowedFuel.containsKey(itemInFuelSlot)) {
