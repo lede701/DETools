@@ -31,9 +31,9 @@ public class RegistryHandler {
     }
 
     // Items
-    public static final RegistryObject<Item> ITEM_DIAMOND_EMERALD = ITEMS.register("item_diamond_emerald", DeToolsElement::new);
+    public static final RegistryObject<Item> ITEM_DIAMOND_EMERALD = ITEMS.register("item_diamond_emerald", () -> new DeToolsElement(90));
 
-    public static final RegistryObject<Item> ITEM_MACHINE_FRAME = ITEMS.register("item_machine_frame", DeToolsElement::new);
+    public static final RegistryObject<Item> ITEM_MACHINE_FRAME = ITEMS.register("item_machine_frame", () -> new DeToolsElement(50));
     public static final RegistryObject<Item> ITEM_GEAR_PATTERN = ITEMS.register("item_gear_pattern", ElementGearPattern::new);
 
     // Diamond Emerald Tools

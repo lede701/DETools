@@ -36,22 +36,31 @@ public class CoalGenerator extends GeneratorBlock {
     private static final Logger LOGGER = LogManager.getLogger(DETools.MOD_ID);
     private final int fuelSlot = 0;
     private int fuelTimeToBurn = 0;
+    private double efficiency = 1f;
     private Map<Item, Integer> allowedFuel;
 
     public CoalGenerator() {
         super(GeneratorBlock.SIMPLE_GENERATOR());
         this.setDefaultState(this.getStateContainer().getBaseState().with(DirectionalBlock.FACING, Direction.NORTH));
-        allowedFuel = new HashMap<Item, Integer>();
+        updateFuelGen();
+    }
+
+    public void updateFuelGen() {
+        if(allowedFuel == null) {
+            allowedFuel = new HashMap<Item, Integer>();
+        }else {
+            allowedFuel.clear();
+        }
         // Coal is great
-        allowedFuel.put(Items.COAL, 200);
-        allowedFuel.put(Items.COAL_BLOCK, 1800);
+        allowedFuel.put(Items.COAL, (int)(200f * efficiency));
+        allowedFuel.put(Items.COAL_BLOCK, (int)(1800f * efficiency));
 
         // Wood fuels
-        allowedFuel.put(Items.ACACIA_PLANKS, 50);
-        allowedFuel.put(Items.BIRCH_PLANKS, 50);
-        allowedFuel.put(Items.DARK_OAK_PLANKS, 50);
-        allowedFuel.put(Items.OAK_PLANKS, 50);
-        allowedFuel.put(Items.SPRUCE_PLANKS, 50);
+        allowedFuel.put(Items.ACACIA_PLANKS, (int)(50f * efficiency));
+        allowedFuel.put(Items.BIRCH_PLANKS, (int)(50f * efficiency));
+        allowedFuel.put(Items.DARK_OAK_PLANKS, (int)(50f * efficiency));
+        allowedFuel.put(Items.OAK_PLANKS, (int)(50f * efficiency));
+        allowedFuel.put(Items.SPRUCE_PLANKS, (int)(50f * efficiency));
     }
 
     @Override

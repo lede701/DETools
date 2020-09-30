@@ -11,9 +11,9 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 public class DeToolsElement extends Item implements Comparable<DeToolsElement> {
     protected final int sortid;
 
-    public DeToolsElement() {
+    public DeToolsElement(int sortid) {
         super(new Item.Properties().group(DETools.TAB).maxStackSize(64));
-        this.sortid = 1;
+        this.sortid = sortid;
     }
 
     public DeToolsElement(Properties properties, int sortid){
