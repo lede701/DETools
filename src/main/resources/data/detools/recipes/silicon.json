@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "result": {
+    "item": "appliedenergistics2:silicon"
+  },
+  "ingredient": [
+    {
+      "tag": "minecraft:dirt"
+    }
+  ],
+  "experience": 0.0
+}
